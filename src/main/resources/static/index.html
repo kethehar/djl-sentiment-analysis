@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>DJL Sentiment Analysis Prediction</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-10">
+                <div class="main-card">
+                    <div class="header-section">
+                        <h1>Sentiment Analysis</h1>
+                        <p>DeepJavaLibrary demonstration by mosa</p>
+                    </div>
+
+                    <div class="input-section">
+                        <label for="textInput" class="font-weight-bold">Bitte Text eingeben</label>
+                        <input type="text" 
+                               class="form-control form-control-lg" 
+                               id="textInput" 
+                               placeholder="z.B. 'Das finde ich toll!' oder 'Das ist schrecklich...'"
+                               onkeyup="getSentiment(event, this.value);">
+                        <small class="form-text text-muted">Text eingeben, Enter drücken um die Analyse zu starten</small>
+                    </div>
+
+                    <div id="answerPart" style="display: none;">
+                        <div class="results-card">
+                            <h5 class="text-center mb-4">📊 Ergebnis</h5>
+                            
+                            <div class="sentiment-label">
+                                <span>😊 Positive</span>
+                                <span id="positivePercent" class="badge badge-success">0%</span>
+                            </div>
+                            <div class="progress">
+                                <div id="positive" class="progress-bar bg-success" role="progressbar" 
+                                     style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+                            </div>
+                            
+                            <div class="sentiment-label">
+                                <span>😞 Negative</span>
+                                <span id="negativePercent" class="badge badge-danger">0%</span>
+                            </div>
+                            <div class="progress">
+                                <div id="negative" class="progress-bar bg-danger" role="progressbar" 
+                                     style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <small class="text-muted">
+                            <span id="versionInfo">Loading version info...</span>
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
