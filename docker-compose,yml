@@ -1,0 +1,13 @@
+services:
+  web-service:
+    depends_on:
+      
+model-service
+  image: ghcr.io/kethehar/djl-serving-consumer:latest
+  ports:
+"80:8082"
+restart: always
+
+  model-service:
+    image: ghcr.io/kethehar/djl-serving:latest
+    restart: always
